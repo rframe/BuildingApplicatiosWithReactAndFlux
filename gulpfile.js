@@ -6,11 +6,13 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect'); //Runs a local dev server
 var open = require('gulp-open'); //Open a URL in a web broawwser
+
 var browserify = require('browserify'); // Bundle JS
 var reactify = require('reactify'); // Transforms React JSX to JS
 var source = require('vinyl-source-stream'); // Use conventional text streams with Gulp
 var concat = require('gulp-concat'); // Concatenates files
 var lint = require('gulp-eslint'); //Lint JS Files including jsx
+
 var config = {
     port: 9005,
     devBaseUrl: 'http://localhost',
@@ -84,4 +86,12 @@ gulp.task('watch', function() {
     gulp.watch(config.paths.js, ['js', 'lint'])
 });
 
-gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'open', 'watch']);
+gulp.task('default', [
+                        'html'
+                        , 'js'
+                        , 'css'
+                        , 'images'
+                        , 'lint'
+                        , 'open'
+                        , 'watch'
+                     ]);
