@@ -6,6 +6,9 @@
 var React = require('react');
 var Router = require('react-router');
 var routes = require('./routes');
+var InitializatActions = require('./actions/initializeActions');
+
+InitializatActions.initApp();
 
 Router.run(routes, function(Handler) {
 //Router.run(routes, Router.HistoryLocation, function(Handler) {
